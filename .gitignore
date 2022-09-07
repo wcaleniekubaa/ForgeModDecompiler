@@ -1,0 +1,8 @@
+gradlew
+gradlew.bat
+temp
+Sources
+logs
+.idea
+.gradle
+build
