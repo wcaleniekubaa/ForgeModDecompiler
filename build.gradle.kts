@@ -11,7 +11,7 @@ val flatLafVersion = "2.4"
 val log4jVersion = "2.18.0"
 
 group = "com.github.wcaleniekubaa"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -37,6 +37,12 @@ dependencies {
     implementation("com.github.fesh0r:fernflower:dbf407a655")
 
 
+}
+
+val jar by tasks.getting(Jar::class) {
+    manifest {
+        attributes["Main-Class"] = "com.github.wcaleniekubaa.fmd.FMDMain"
+    }
 }
 
 tasks.test {
