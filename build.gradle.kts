@@ -11,7 +11,7 @@ val flatLafVersion = "2.4"
 val log4jVersion = "2.18.0"
 
 group = "com.github.wcaleniekubaa"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
