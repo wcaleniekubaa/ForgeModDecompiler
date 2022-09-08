@@ -11,7 +11,7 @@ Wrote 100% in kotlin
 3. Download mcp mappings corresponding to Forge Mod Version (you can get them here: https://github.com/Aizistral-Studios/MCP-Archive/tree/dungeon-master/de/oceanlabs/mcp)
 4. Extract them to mappings folder make sure that directory extracted looks like here: ![MAPPING DIR](https://pekwachnamaykoskwaskwaypinwanik.jet.pics/4d188d8bcef3.png)
 5. Rerun it
-6. Click browse button and select Forge Mod that you want to decompile (make sure that you have permission from mod author)
+6. Click browse button and select Mod that you want to decompile (make sure that you have permission from mod author)
 ![BROWSE BUTTON](https://pekwachnamaykoskwaskwaypinwanik.jet.pics/21659ff89f45.png)
 7. Select mappings that you downloaded (for example: mcp_stable-12-1.7.10)
 ![SELECT MAPPINGS](https://pekwachnamaykoskwaskwaypinwanik.jet.pics/798e1c45741b.png)
