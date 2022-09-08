@@ -30,6 +30,7 @@ object FMDMain {
     fun main(args: Array<String>) {
 
         val mappingsFile = File("mappings")
+        mappingsFile.mkdirs()
         val filter = FilenameFilter { dir, name ->
             File(dir, name).isDirectory
         }
@@ -48,11 +49,9 @@ object FMDMain {
     fun process(mappings: File, input: File, decompiler: Decompiler) {
         logger.info("Started mapping jar: $input with mappings: $mappings")
         val fields = File(mappings, "fields.csv")
-        if(!fields.exists())
-            throw FileNotFoundException("fields.csv file does not exist.")
-        val methods = File(mappings,"methods.csv")
-        if(!fields.exists())
-            throw FileNotFoundException("methods.csv file does not exist.")
+        if (!fields.exists()) throw FileNotFoundException("fields.csv file does not exist.")
+        val methods = File(mappings, "methods.csv")
+        if (!fields.exists()) throw FileNotFoundException("methods.csv file does not exist.")
 
         val methodList = mutableListOf<MCPMember>()
         Files.newBufferedReader(Paths.get(methods.toURI())).use { reader ->
@@ -73,8 +72,7 @@ object FMDMain {
             }
         }
 
-        if(!input.exists())
-            throw IllegalArgumentException("Input file does not exist.")
+        if (!input.exists()) throw IllegalArgumentException("Input file does not exist.")
 
         val mappings = MCPMappings(methodList, fieldList)
 
@@ -83,11 +81,11 @@ object FMDMain {
         val outputStream = JarOutputStream(File("temp/ff_in.jar").outputStream())
 
         var entry = inputStream.nextJarEntry
-        while(entry != null) {
+        while (entry != null) {
 
             logger.info("Reading entry: " + entry.name)
 
-            if(entry.name.endsWith(".class")) {
+            if (entry.name.endsWith(".class")) {
                 val cr = ClassReader(inputStream)
                 val cw = ClassWriter(ClassWriter.COMPUTE_MAXS)
                 val sm = SeargeMapper(mappings)
