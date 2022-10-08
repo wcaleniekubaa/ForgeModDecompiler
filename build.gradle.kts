@@ -10,6 +10,7 @@ val asmVersion = "9.3"
 val flatLafVersion = "2.4"
 val log4jVersion = "2.18.0"
 
+
 group = "com.github.wcaleniekubaa"
 version = "1.0.2"
 
@@ -50,5 +51,5 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "17"
 }

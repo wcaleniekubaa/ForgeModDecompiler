@@ -6,13 +6,17 @@ import java.io.File
 import java.util.jar.JarInputStream
 
 enum class Decompiler(val executor: (File) -> Unit) {
+    // CFR Decompiler
     CFR(executor = { input ->
         Main.main(arrayOf(input.absolutePath, "--outputdir", "Sources/"))
     }),
+
+    // Procyon Decompiler
     PROCYON(executor = { input ->
         com.strobel.decompiler.DecompilerDriver.main(arrayOf("-jar", input.absolutePath, "-o", "Sources/"))
 
     }),
+    // Fernflower Decompiler
     FERNFLOWER(executor = { input ->
         File("temp/ff_temp").mkdirs()
         ConsoleDecompiler.main(arrayOf("temp/ff_in.jar", "temp/ff_temp"))
