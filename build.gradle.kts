@@ -12,7 +12,7 @@ val log4jVersion = "2.18.0"
 
 
 group = "com.github.wcaleniekubaa"
-version = "1.0.2"
+version = "1.1.0-u"
 
 repositories {
     mavenCentral()
@@ -35,7 +35,8 @@ dependencies {
     implementation("com.opencsv:opencsv:5.7.0")
     implementation("org.benf:cfr:0.152")
     implementation(files("libs/procyon.jar"))
-    implementation("com.github.fesh0r:fernflower:dbf407a655")
+    implementation(files("libs/jd-core-1.1.3.jar")) // I have spent hours on implementing support for an outdated decompiler
+    implementation("com.github.fesh0r:fernflower:master") // We want newest version, aren't we?
 
 
 }
