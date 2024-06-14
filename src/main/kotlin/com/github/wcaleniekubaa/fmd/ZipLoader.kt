@@ -49,7 +49,7 @@ class ZipLoader(zip: File?) : Loader {
 
     @Throws(LoaderException::class)
     override fun load(internalName: String): ByteArray {
-        println("Loading $internalName from jar!")
+        FMDMain.logger.info("Loading $internalName from jar!")
         return map["$internalName"]!!
     }
 

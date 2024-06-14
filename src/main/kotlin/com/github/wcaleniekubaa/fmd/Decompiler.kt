@@ -34,7 +34,7 @@ enum class Decompiler(val executor: (File) -> Unit) {
                 entry = inputStream.nextJarEntry
                 continue
             }
-            println("Processing ${entry.name} entry!")
+            FMDMain.logger.info("Processing ${entry.name} entry!")
             if (!entry.name.endsWith(".class")) {
                 entry = inputStream.nextJarEntry
                 continue
