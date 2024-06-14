@@ -37,7 +37,7 @@ object FMDMain {
         val list = mappingsFile.listFiles(filter)
         mappingsFiles.addAll(list!!)
 
-        println(mappingsFile)
+        FMDMain.logger.info(mappingsFile)
 
         // Want to change theme?
         // Change it here
